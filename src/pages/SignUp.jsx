@@ -15,7 +15,7 @@ const SignUp = ({ navigation }) => {
   };
   const submitForm = (values, onSubmitProps) => {
     console.log(values);
-    navigation.navigate("Verify");
+    navigation.navigate("CreatePin");
   };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -29,11 +29,6 @@ const SignUp = ({ navigation }) => {
       .matches(/^(?=.*[A-Z])/, "Must contain at least one uppercase character")
       .matches(/^(?=.*[0-9])/, "Must contain at least one number")
       .matches(/^(?=.*[!@#%&])/, "Must contain at least one special character"),
-    // .matches()
-    // .matches(
-    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-    //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    // ),
   });
   const [eye, setEye] = useState(false);
   return (
@@ -56,7 +51,7 @@ const SignUp = ({ navigation }) => {
         <View style={styles.textContainer}>
           <Text
             style={{
-              fontFamily: FONTS.MulishSemiBold,
+              fontFamily: FONTS.MulishBold,
               fontSize: 24,
               color: colors.black,
               marginTop: 20,
