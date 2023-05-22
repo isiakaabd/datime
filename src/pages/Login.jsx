@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  KeyboardAvoidingView,
+  Image,
+  ScrollView,
+} from "react-native";
 import { useState } from "react";
 import images from "../assets";
 import { COLORS, FONTS } from "../utils/fonts";
@@ -15,7 +22,7 @@ const Login = ({ navigation }) => {
   };
   const submitForm = (values, onSubmitProps) => {
     console.log(values);
-    navigation.navigate("CreatePin");
+    navigation.navigate("Home");
   };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -32,8 +39,8 @@ const Login = ({ navigation }) => {
   });
   const [eye, setEye] = useState(false);
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <KeyboardAvoidingView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             width: 100,
@@ -177,7 +184,7 @@ const Login = ({ navigation }) => {
           </Formik>
         </View>
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

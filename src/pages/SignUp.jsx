@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  Text,
+  View,
+  Image,
+  ScrollView,
+} from "react-native";
 import { useState } from "react";
 import images from "../assets";
 import { COLORS, FONTS } from "../utils/fonts";
@@ -32,8 +39,8 @@ const SignUp = ({ navigation }) => {
   });
   const [eye, setEye] = useState(false);
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <KeyboardAvoidingView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             width: 100,
@@ -181,7 +188,7 @@ const SignUp = ({ navigation }) => {
           </Formik>
         </View>
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

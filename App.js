@@ -2,7 +2,14 @@ import { useFonts } from "expo-font";
 
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Splash, Login, CreatePin, ForgotPassword, SignUp } from "./src/pages";
+import {
+  Splash,
+  Login,
+  CreatePin,
+  ForgotPassword,
+  SignUp,
+  Home,
+} from "./src/pages";
 import * as SplashScreen from "expo-splash-screen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useCallback } from "react";
@@ -50,6 +57,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="CreatePin" component={CreatePin} />
+        <Stack.Screen name="Home" component={Home} />
 
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>

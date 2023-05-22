@@ -1,11 +1,4 @@
-import {
-  TouchableOpacity,
-  Text,
-  View,
-  StyleSheet,
-  TouchableHighlight,
-  Pressable,
-} from "react-native";
+import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { COLORS, FONTS } from "../utils/fonts";
 import { useTheme } from "@react-navigation/native";
@@ -25,19 +18,31 @@ const ButtonWithIcon = ({
   const { colors } = useTheme();
   return (
     <TouchableHighlight>
-      <View style={styles.googleButton}>
-        {/* <TouchableOpacity
-        onPress={handlePress}
-        {...rest}
-        disabled={disabled}
+      <View
         style={[
-          styles.container,
-          { backgroundColor, borderColor: borderStyle },
+          styles.googleButton,
+          {
+            backgroundColor: backgroundColor ? backgroundColor : "#fff",
+          },
         ]}
-      > */}
-        {icon && <FontAwesome5 name={icon} size={28} />}
-        <Text style={[styles.text]}>{text}</Text>
-        {/* </TouchableOpacity> */}
+      >
+        {icon && (
+          <FontAwesome5
+            name={icon}
+            size={28}
+            style={{
+              color: backgroundColor === "#fff" ? COLORS.black : "#fff",
+            }}
+          />
+        )}
+        <Text
+          style={[
+            styles.text,
+            { color: backgroundColor === "#fff" ? COLORS.black : "#fff" },
+          ]}
+        >
+          {text}
+        </Text>
       </View>
     </TouchableHighlight>
   );
@@ -45,7 +50,7 @@ const ButtonWithIcon = ({
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 55,
+    // height: 55,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 4,
@@ -57,10 +62,11 @@ const styles = StyleSheet.create({
     borderColor: COLORS.grey,
     alignItems: "center",
     borderWidth: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 8,
     borderRadius: 4,
 
-    // backgroundColor: "#f00",
-    height: 55,
+    // height: 55,
     gap: 10,
     borderColor: "#333",
   },

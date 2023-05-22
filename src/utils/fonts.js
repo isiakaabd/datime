@@ -9,11 +9,14 @@ export const COLORS = {
   gray: "#74858C",
   background: "#fff",
   green: "#84A625",
+  green100: "#5C6401",
+  green70: "#B7C701",
   yellow: "#FBE5C2",
   black: "#000",
   whiteGrey: "#E8E8E8",
   primary: "#822E6F",
   grey: "#9B9B9B",
+  lighterGrey: "#4D4D4D",
 };
 export const SHADOWS = {
   light: {
