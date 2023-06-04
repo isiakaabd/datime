@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { FONTS } from "../utils/fonts";
 
-const Card = () => {
+const Card = ({ title, subTitle }) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>Card Title</Text>
-      <Text style={styles.content}>Card content goes here...</Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.content}>{subTitle}</Text>
     </View>
   );
 };
@@ -14,7 +15,9 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
     borderRadius: 8,
-    padding: 16,
+    paddingVertical: 25,
+    paddingHorizontal: 16,
+    justifyContent: "center",
     marginVertical: 8,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -29,6 +32,7 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize: 16,
+    fontFamily: FONTS.MulishSemiBold,
   },
 });
 
